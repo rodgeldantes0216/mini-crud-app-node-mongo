@@ -48,14 +48,18 @@ This is a full-stack **CRUD application** built with:
 ```bash
 npm install
 
-🧠 MongoDB Connection
+---
+
+## 🧠 MongoDB Connection
 This app connects to a local MongoDB database.
 
 Make sure MongoDB is running. Then it will connect using:
 
-mongodb://127.0.0.1:27017/userdb
+mongodb://127.0.0.1:27017/userdb.
 
-If you get a connection error like ECONNREFUSED ::1, use 127.0.0.1 instead of localhost.
+---
+
+## If you get a connection error like ECONNREFUSED ::1, use 127.0.0.1 instead of localhost.
 
 ▶️ Run the Server
 
@@ -77,6 +81,7 @@ Edit a user
 Delete a user
 
 View all users
+
 
 🧪 API Endpoints
 Method	Endpoint	Description
