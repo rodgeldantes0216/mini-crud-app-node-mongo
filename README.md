@@ -21,18 +21,18 @@ This is a full-stack **CRUD application** built with:
 ---
 
 ## 🗂️ Project Structure
-
-- node-mongo-crud/
-- ├── models/
-- │ └── User.js # Mongoose schema/model
-- ├── routes/
-- │ └── userRoutes.js # RESTful API routes
-- ├── public/
-- │ ├── index.html # Frontend UI
-- │ └── script.js # Frontend JS (fetch API)
-- ├── server.js # Express server + MongoDB connection
-- └── README.md # Project documentation
-
+``` bash
+node-mongo-crud/
+├── models/
+│ └── User.js # Mongoose schema/model
+├── routes/
+│ └── userRoutes.js # RESTful API routes
+├── public/
+│ ├── index.html # Frontend UI
+│ └── script.js # Frontend JS (fetch API)
+├── server.js # Express server + MongoDB connection
+└── README.md # Project documentation
+```
 ---
 
 ## ⚙️ Prerequisites
