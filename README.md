@@ -29,21 +29,25 @@ A basic web application using Node.js, Express, MongoDB (via Mongoose), and vani
 ---
 
 ## 📂 Project Structure
-project/
+```bash
+.
+├── public/                 # Frontend static files (HTML, CSS, JS)
+│   ├── index.html          # Protected user dashboard
+│   └── login.html          # Login page
+│
+├── routes/                 # Express route handlers
+│   ├── auth.js             # Login/logout routes
+│   └── userRoutes.js       # CRUD routes for User
 │
 ├── models/
-│ └── User.js # Mongoose user schema
-├── routes/
-│ ├── auth.js # Login and logout routes
-│ └── userRoutes.js # CRUD API endpoints
-├── public/
-│ ├── login.html # Login page
-│ ├── index.html # Protected dashboard with CRUD form
-│ └── script.js # Handles fetch requests
-├── .env # Environment variables
-├── server.js # Main Express server
-└── README.md
-
+│   └── User.js             # Mongoose schema for User
+│
+├── .env                    # Environment variables (Mongo URI, session secret)
+├── .gitignore              # Files/folders to ignore in Git
+├── server.js               # Main server file (Express app entry point)
+├── package.json            # Project metadata and dependencies
+└── README.md               # Project documentation
+```
 ---
 
 ## 🛠️ Setup Instructions
