@@ -64,10 +64,13 @@ If you get a connection error like ECONNREFUSED ::1, use 127.0.0.1 instead of lo
 ---
 
 ## ▶️ Run the Server
-
+```bash
 node server.js
-
+```
+or
+``` bash
 node server.js
+```
 
 ---
 
