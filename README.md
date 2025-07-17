@@ -29,20 +29,20 @@ A basic web application using Node.js, Express, MongoDB (via Mongoose), and vani
 ---
 
 ## 📂 Project Structure
-  project/
-  │
-  ├── models/
-  │     └── User.js # Mongoose user schema
-  ├── routes/
-  │     ├── auth.js # Login and logout routes
-  │     └── userRoutes.js # CRUD API endpoints
-  ├── public/
-  │     ├── login.html # Login page
-  │     ├── index.html # Protected dashboard with CRUD form
-  │     └── script.js # Handles fetch requests
-  ├── .env # Environment variables
-  ├── server.js # Main Express server
-  └── README.md
+project/
+│
+├── models/
+│ └── User.js # Mongoose user schema
+├── routes/
+│ ├── auth.js # Login and logout routes
+│ └── userRoutes.js # CRUD API endpoints
+├── public/
+│ ├── login.html # Login page
+│ ├── index.html # Protected dashboard with CRUD form
+│ └── script.js # Handles fetch requests
+├── .env # Environment variables
+├── server.js # Main Express server
+└── README.md
 
 ---
 
