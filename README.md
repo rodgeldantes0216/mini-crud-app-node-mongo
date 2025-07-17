@@ -1,127 +1,98 @@
-# 🧑‍💻 User Management CRUD App (Node.js + MongoDB + HTML)
+# Node.js + Express + MongoDB CRUD App with Session Authentication
 
-This is a full-stack **CRUD application** built with:
+A basic web application using Node.js, Express, MongoDB (via Mongoose), and vanilla HTML/CSS/JS that demonstrates:
 
-- **Node.js** and **Express.js** (Backend API)
-- **MongoDB** and **Mongoose** (Database)
-- **Vanilla HTML + JavaScript** (Frontend)
-
-> A simple app to create, read, update, and delete users via a REST API with a clean web UI.
+- User login with session-based authentication
+- Protected routes
+- Full CRUD operations on user data
+- Frontend and backend separation
 
 ---
 
 ## 🚀 Features
 
-- 📄 List all users
-- ➕ Create a new user
-- ✏️ Edit existing users
-- ❌ Delete users
-- 🧭 View users in a simple HTML table
+- 🔐 **Session Authentication** using `express-session`
+- 🗃️ **MongoDB CRUD** via RESTful API endpoints
+- 🧾 **Form-based login and data entry**
+- 📁 **Public folder** for frontend HTML/CSS/JS
+- ✅ Simple and clear code structure (no frameworks on frontend)
 
 ---
 
-## 🗂️ Project Structure
-``` bash
-node-mongo-crud/
-├── models/
-│ └── User.js # Mongoose schema/model
-├── routes/
-│ └── userRoutes.js # RESTful API routes
-├── public/
-│ ├── index.html # Frontend UI
-│ └── script.js # Frontend JS (fetch API)
-├── server.js # Express server + MongoDB connection
-└── README.md # Project documentation
-```
----
+## 🧱 Tech Stack
 
-## ⚙️ Prerequisites
-
-- Node.js and npm installed
-- MongoDB installed and running locally
-- (Optional) MongoDB Compass to view your data
+- **Backend:** Node.js, Express, Mongoose, dotenv
+- **Database:** MongoDB (local or MongoDB Compass)
+- **Frontend:** HTML + JavaScript (fetch API)
+- **Session:** express-session
 
 ---
 
-## 📦 Install Dependencies
-
-```bash
-npm install
-
-```
-
----
-
-## 🧠 MongoDB Connection
-- This app connects to a local MongoDB database.
-
-- Make sure MongoDB is running. Then it will connect using:
-
-- mongodb://127.0.0.1:27017/userdb.
-
-If you get a connection error like ECONNREFUSED ::1, use 127.0.0.1 instead of localhost.
+## 📂 Project Structure
+  project/
+  │
+  ├── models/
+  │     └── User.js # Mongoose user schema
+  ├── routes/
+  │     ├── auth.js # Login and logout routes
+  │     └── userRoutes.js # CRUD API endpoints
+  ├── public/
+  │     ├── login.html # Login page
+  │     ├── index.html # Protected dashboard with CRUD form
+  │     └── script.js # Handles fetch requests
+  ├── .env # Environment variables
+  ├── server.js # Main Express server
+  └── README.md
 
 ---
 
-## ▶️ Run the Server
-```bash
-node server.js
-```
-or
-``` bash
-node server.js
-```
+## 🛠️ Setup Instructions
+
+  1. **Clone the repository**
+    ```bash
+      git clone https://github.com/your-username/node-mongo-crud-auth.git
+      cd node-mongo-crud-auth
+    ```
+  2. **Install dependencies**
+    ```bash
+      npm install
+    ```
+  3. **Create a .env file**
+    ```bash
+      MONGO_URI=mongodb://127.0.0.1:27017/userdb
+      SESSION_SECRET=your_session_secret
+    ```
+  4. **Run MongoDB locally**
+    Make sure MongoDB server is running (e.g., via MongoDB Compass or mongod CLI)
+
+  5. **Start the server**
+    ```bash
+      node server.js
+    ```
+  6. **Open your browser**
+    ```bash
+      http://localhost:5000/login
+    ```
 
 ---
 
-## 🌐 Access the Frontend
-Go to your browser and open:
-
-http://localhost:5000/index.html
-
-You will see a simple user interface to:
-
-Add a user
-
-Edit a user
-
-Delete a user
-
-View all users
-
-
-## 🧪 API Endpoints
-Method	Endpoint	Description
-GET	/api/users	Get all users
-GET	/api/users/:id	Get a user by ID
-POST	/api/users	Create a new user
-PUT	/api/users/:id	Update a user
-DELETE	/api/users/:id	Delete a user
+## 👤 Default User (Optional)
+ - You can insert a default user on startup by calling a script or modifying server.js to add a user if none exists.
 
 ---
 
-## 🧰 Technologies Used
-Node.js
+## ✅ To Do / Improvements
+   - 🔒 Password hashing (e.g., bcrypt)
 
-Express.js
+   - 📦 Switch to JWT-based auth (optional)
 
-MongoDB
+   - 🧼 Form validation + error handling
 
-Mongoose
+   - 🌍 Deploy to Render, Railway, or Heroku
 
-HTML5
+----
 
-JavaScript (fetch API)
-
-CSS
-
----
-
-## 📌 Tips
-- You can expand this into a full MERN or MEAN stack project.
-
-- Great for learning REST APIs, Express, and MongoDB with no frameworks.
-
-- Can be deployed later using platforms like Render, Vercel, or Heroku.
+## 🧑‍💻 Author
+   - Built with ❤️ by Ghel (Rodgel) — 2025
 
 ---

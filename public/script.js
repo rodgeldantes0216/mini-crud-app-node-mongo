@@ -1,9 +1,10 @@
 const API_URL = '/api/users';
 const tableBody = document.querySelector('#userTable tbody');
 const form = document.getElementById('userForm');
-const nameInput = document.getElementById('name');
+const firstNameInput = document.getElementById('first_name');
+const lastNameInput = document.getElementById('last_name');
 const emailInput = document.getElementById('email');
-const ageInput = document.getElementById('age');
+const passwordInput = document.getElementById('password');
 
 let editingUserId = null;
 
@@ -15,11 +16,12 @@ async function loadUsers() {
   users.forEach(user => {
     const row = document.createElement('tr');
     row.innerHTML = `
-      <td>${user.name}</td>
+      <td>${user.first_name}</td>
+      <td>${user.last_name}</td>
       <td>${user.email}</td>
-      <td>${user.age}</td>
+      <td>${new Date(user.created_at).toLocaleString()}</td>
       <td>
-        <button onclick="editUser('${user._id}', '${user.name}', '${user.email}', ${user.age})">Update</button>
+        <button onclick="editUser('${user._id}', '${user.first_name}', '${user.last_name}', '${user.email}')">Update</button>
         <button onclick="deleteUser('${user._id}')">Remove</button>
       </td>
     `;
@@ -30,10 +32,12 @@ async function loadUsers() {
 // Add or update user
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+
   const user = {
-    name: nameInput.value,
+    first_name: firstNameInput.value,
+    last_name: lastNameInput.value,
     email: emailInput.value,
-    age: Number(ageInput.value),
+    password: passwordInput.value // plain here, hash it in backend
   };
 
   if (editingUserId) {
@@ -56,12 +60,13 @@ form.addEventListener('submit', async (e) => {
   loadUsers();
 });
 
-// Edit user
-function editUser(id, name, email, age) {
+// Edit user (we don't update password from here)
+function editUser(id, first_name, last_name, email) {
   editingUserId = id;
-  nameInput.value = name;
+  firstNameInput.value = first_name;
+  lastNameInput.value = last_name;
   emailInput.value = email;
-  ageInput.value = age;
+  passwordInput.value = '';
   form.querySelector('button').textContent = 'Update User';
 }
 

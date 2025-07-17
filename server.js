@@ -22,8 +22,13 @@ app.use(session({
   saveUninitialized: true,
 }));
 
+app.use(express.json()); // For JSON payloads
+app.use(express.urlencoded({ extended: true })); // For form data (optional)
+
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use('/assets', express.static(path.join(__dirname, 'public', 'assets')));
 
 // Auth routes (login/logout)
 app.use(authRoutes);
@@ -36,19 +41,27 @@ function isAuthenticated(req, res, next) {
 
 // Protected route: index.html
 app.get('/', isAuthenticated, (req, res) => {
-  res.sendFile('index.html', { root: './public' });
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+// app.get('/', (req, res) => {
+//   res.sendFile('index.html', { root: './public' });
+// });
 
 // Protected API routes
 app.use('/api/users', isAuthenticated, userRoutes);
 
+// Serve login page
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+// app.use('/api/users', userRoutes);
+
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error(err));
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(console.error);
 
 // Start server
 app.listen(PORT, () => {
