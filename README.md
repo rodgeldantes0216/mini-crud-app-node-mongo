@@ -48,26 +48,30 @@ This is a full-stack **CRUD application** built with:
 ```bash
 npm install
 
+```
+
 ---
 
 ## 🧠 MongoDB Connection
-This app connects to a local MongoDB database.
+- This app connects to a local MongoDB database.
 
-Make sure MongoDB is running. Then it will connect using:
+- Make sure MongoDB is running. Then it will connect using:
 
-mongodb://127.0.0.1:27017/userdb.
+- mongodb://127.0.0.1:27017/userdb.
+
+If you get a connection error like ECONNREFUSED ::1, use 127.0.0.1 instead of localhost.
 
 ---
 
-## If you get a connection error like ECONNREFUSED ::1, use 127.0.0.1 instead of localhost.
-
-▶️ Run the Server
+## ▶️ Run the Server
 
 node server.js
 
 node server.js
 
-🌐 Access the Frontend
+---
+
+## 🌐 Access the Frontend
 Go to your browser and open:
 
 http://localhost:5000/index.html
@@ -83,7 +87,7 @@ Delete a user
 View all users
 
 
-🧪 API Endpoints
+## 🧪 API Endpoints
 Method	Endpoint	Description
 GET	/api/users	Get all users
 GET	/api/users/:id	Get a user by ID
@@ -91,7 +95,9 @@ POST	/api/users	Create a new user
 PUT	/api/users/:id	Update a user
 DELETE	/api/users/:id	Delete a user
 
-🧰 Technologies Used
+---
+
+## 🧰 Technologies Used
 Node.js
 
 Express.js
@@ -106,9 +112,13 @@ JavaScript (fetch API)
 
 CSS
 
-📌 Tips
-You can expand this into a full MERN or MEAN stack project.
+---
 
-Great for learning REST APIs, Express, and MongoDB with no frameworks.
+## 📌 Tips
+- You can expand this into a full MERN or MEAN stack project.
 
-Can be deployed later using platforms like Render, Vercel, or Heroku.
+- Great for learning REST APIs, Express, and MongoDB with no frameworks.
+
+- Can be deployed later using platforms like Render, Vercel, or Heroku.
+
+---
